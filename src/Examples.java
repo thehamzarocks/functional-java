@@ -4,8 +4,8 @@ import java.util.stream.Stream;
 
 public class Examples {
 
-  List<String> doubleElements(List<Integer> inputList) {
-    return ListComprehension.<Integer, String>doListComprehension(x -> "Hello" + x, inputList, x -> (2 * x < 12));
+  List<String> sayHello(List<Integer> inputList) {
+    return ListComprehension.doListComprehension(x -> "Hello" + x, inputList, x -> (2 * x < 12));
   }
 
   public String getTheRightString(int input) {
@@ -48,7 +48,7 @@ public class Examples {
   public static void main(String[] args) {
     List<Integer> input = List.of(5, 12, 10, 1, 3, 15, 4, 5);
     Examples coolClass = new Examples();
-    System.out.println(coolClass.doubleElements(input));
+    System.out.println(coolClass.sayHello(input));
     System.out.println(coolClass.getTheRightString(8));
     System.out.println(coolClass.quickSort(List.of(5, 12, 14, 1, 10, 3)));
   }

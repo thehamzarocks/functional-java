@@ -1,23 +1,17 @@
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ListComprehension {
 
-  public interface ListComprehensionMapExpression<S, T> {
-    public T listComprehensionMapExpression(S val);
-  }
-
-  public interface ListComprehensionFilterExpression<T> {
-    public boolean listComprehensionFilterExpression(T val);
-  }
-
   static <S, T> List<T> doListComprehension(
-      ListComprehensionMapExpression<S, T> listComprehensionExpression,
+      Function<S, T> listComprehensionExpression,
       List<S> inputList,
-      ListComprehensionFilterExpression<S> listComprehensionFilterExpression) {
+      Predicate<S> listComprehensionFilterExpression) {
     return inputList.stream()
-        .filter(x -> listComprehensionFilterExpression.listComprehensionFilterExpression(x))
-        .map(x -> listComprehensionExpression.listComprehensionMapExpression((x)))
+        .filter(x -> listComprehensionFilterExpression.test(x))
+        .map(x -> listComprehensionExpression.apply(x))
         .collect(Collectors.toList());
   }
 }

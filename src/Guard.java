@@ -1,3 +1,6 @@
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 class Guard<T> {
   private T value;
   private boolean alreadyMatched = false;
@@ -20,13 +23,9 @@ class Guard<T> {
     return value;
   }
 
-  interface GuardResult<T> {
-    public T evaluateGuardResult();
-  }
-
-  public Guard<T> guard(final boolean expression, final GuardResult<T> result) {
+  public Guard<T> guard(final boolean expression, final Supplier<T> result) {
     if(!alreadyMatched && expression) {
-      this.value = result.evaluateGuardResult();
+      this.value = result.get();
       this.alreadyMatched = true;
     }
     return this;
