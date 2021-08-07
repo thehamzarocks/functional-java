@@ -5,10 +5,9 @@ import java.util.stream.Collectors;
 
 public class ListComprehension {
 
-  static <S, T> List<T> doListComprehension(
-      Function<S, T> listComprehensionExpression,
-      List<S> inputList,
-      Predicate<S> listComprehensionFilterExpression) {
+  static <S, T> List<T> apply(
+          List<S> inputList, Function<S, T> listComprehensionExpression,
+          Predicate<S> listComprehensionFilterExpression) {
     return inputList.stream()
         .filter(x -> listComprehensionFilterExpression.test(x))
         .map(x -> listComprehensionExpression.apply(x))

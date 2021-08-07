@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 public class Examples {
 
   List<String> sayHello(List<Integer> inputList) {
-    return ListComprehension.doListComprehension(x -> "Hello" + x, inputList, x -> (2 * x < 12));
+    return ListComprehension.apply(inputList, x -> "Hello" + x, x -> (2 * x < 12));
   }
 
   public String getTheRightString(int input) {
@@ -20,14 +20,14 @@ public class Examples {
   public List<Integer> sortedSmaller(SplitList<Integer> splitList) {
     return new Examples()
         .quickSort(
-            ListComprehension.doListComprehension(
-                x -> x, splitList.rest, x -> x <= splitList.head));
+            ListComprehension.apply(
+                    splitList.rest, x -> x, x -> x <= splitList.head));
   }
 
   public List<Integer> sortedLarger(SplitList<Integer> splitList) {
     return new Examples()
         .quickSort(
-            ListComprehension.doListComprehension(x -> x, splitList.rest, x -> x > splitList.head));
+            ListComprehension.apply(splitList.rest, x -> x, x -> x > splitList.head));
   }
 
   public static <T> List<T> joinLists(List<T>... lists) {
