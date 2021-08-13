@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.jar.JarOutputStream;
 import java.util.stream.Stream;
 
-public class Examples {
+class Examples {
 
   List<String> sayHello(List<Integer> inputList) {
     return ListComprehension.apply(inputList, x -> "Hello" + x, x -> (2 * x < 12));

@@ -45,6 +45,6 @@ public class SplitList<T> {
             .guard(list.size() == 1, ArrayList::new)
             .guard(Guard.OtherwiseGuard, () -> new ArrayList<>(list).subList(1, list.size()))
             .getValue();
-    return new SplitList(head, rest);
+    return new SplitList<>(head, rest);
   }
 }

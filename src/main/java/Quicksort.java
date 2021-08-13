@@ -13,7 +13,7 @@ public class Quicksort {
   public static List<Integer> quickSort(List<Integer> inputList) {
     List<Integer> result =
         Guard.<List<Integer>>initializeGuard()
-            .guard(inputList.isEmpty(), () -> new ArrayList<>())
+            .guard(inputList.isEmpty(), ArrayList::new)
             .guard(
                 Guard.OtherwiseGuard,
                 () ->
