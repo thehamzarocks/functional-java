@@ -71,3 +71,11 @@ ext {
 nexusStaging {
     packageGroup = "io.github.thehamzarocks" //optional if packageGroup == project.getGroup()
 }
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    	implementation 'junit:junit:4.12'
+}

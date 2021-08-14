@@ -20,7 +20,7 @@ public class ListComprehension {
    * @param <T>
    * @return
    */
-  static <S, T> List<T> apply(
+  public static <S, T> List<T> apply(
       List<S> inputList,
       Function<S, T> listComprehensionExpression,
       Predicate<S> listComprehensionFilterExpression) {
