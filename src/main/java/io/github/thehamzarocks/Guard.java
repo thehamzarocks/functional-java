@@ -1,7 +1,9 @@
+package io.github.thehamzarocks;
+
 import java.util.function.Supplier;
 
 /**
- * Used to implement Haskell-style guards. Guard conditions can be specified along with lambda
+ * Used to implement Haskell-style guards. io.github.thehamzarocks.Guard conditions can be specified along with lambda
  * expressions. The expression corresponding to the first matching guard condition will be evaluated
  * and returned.
  *
@@ -20,11 +22,11 @@ public class Guard<T> {
   }
 
   /**
-   * Initializes an instance of the <code>Guard</code> class. Any guard-related operations happen on
+   * Initializes an instance of the <code>io.github.thehamzarocks.Guard</code> class. Any guard-related operations happen on
    * this instance.
    *
    * @param <T> the type of the evaluated expression
-   * @return an instance of <code>Guard</code>
+   * @return an instance of <code>io.github.thehamzarocks.Guard</code>
    */
   public static <T> Guard<T> initializeGuard() {
     return new Guard<T>();
@@ -44,14 +46,14 @@ public class Guard<T> {
   }
 
   /**
-   * Used on a <code>Guard</code> instance to specify a guard condition and a lambda expression that
-   * will be evaluated if the condition is true. Returns a <code>Guard</code> instance on which
+   * Used on a <code>io.github.thehamzarocks.Guard</code> instance to specify a guard condition and a lambda expression that
+   * will be evaluated if the condition is true. Returns a <code>io.github.thehamzarocks.Guard</code> instance on which
    * further guard conditions can be checked. Only the first expression for which the guard matches
    * will be evaluated.
    *
    * @param expression
    * @param result
-   * @return an instance of the <code>Guard</code> class with existing conditions (if any) already
+   * @return an instance of the <code>io.github.thehamzarocks.Guard</code> class with existing conditions (if any) already
    *     applied
    */
   public Guard<T> guard(final boolean expression, final Supplier<T> result) {

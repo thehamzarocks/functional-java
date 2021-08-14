@@ -1,7 +1,6 @@
-import java.util.ArrayList;
+package io.github.thehamzarocks;
+
 import java.util.List;
-import java.util.jar.JarOutputStream;
-import java.util.stream.Stream;
 
 class Examples {
 

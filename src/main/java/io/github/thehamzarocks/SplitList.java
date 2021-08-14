@@ -1,3 +1,5 @@
+package io.github.thehamzarocks;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +18,8 @@ public class SplitList<T> {
   public List<T> rest;
 
   /**
-   * Initializes a <code>SplitList</code> instance. Prefer using <code>Splitlist.of</code> to create
-   * SplitList instances
+   * Initializes a <code>io.github.thehamzarocks.SplitList</code> instance. Prefer using <code>Splitlist.of</code> to create
+   * io.github.thehamzarocks.SplitList instances
    *
    * @param head
    * @param rest
