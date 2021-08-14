@@ -20,7 +20,7 @@ apply plugin: 'com.bmuschko.nexus'
 
 archivesBaseName = 'hask'
 group = "io.github.thehamzarocks"
-version = "0.1.1"
+version = "0.1.2"
 
 modifyPom {
     project {
